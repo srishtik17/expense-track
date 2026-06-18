@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SpendWise</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+
+    <section
+        id="landingPage"
+        class="page active"
+    >
+
+        <div class="landing-content">
+
+            <h1 class="logo fade delay1">
+                SpendWise
+            </h1>
+
+            <p class="tagline fade delay2">
+                Smart Budgeting • Better Decisions
+            </p>
+
+            <h2 class="hero-title fade delay3">
+                Take Control Of Your Money
+            </h2>
+
+            <p class="hero-description fade delay4">
+
+                Track expenses,
+                compare monthly spending,
+                build savings,
+                and manage finances easily.
+
+            </p>
+
+            <button
+                id="startBtn"
+                class="primary-btn fade delay5"
+            >
+                Get Started
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="authPage"
+        class="page"
+    >
+
+        <div class="auth-card">
+
+            <h2 id="authTitle">
+                Login
+            </h2>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button
+                id="authBtn"
+                class="primary-btn"
+            >
+                Login
+            </button>
+
+            <p class="switch-text">
+
+                New User?
+
+                <span id="toggleAuth">
+                    Sign Up
+                </span>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="setupPage"
+        class="page"
+    >
+
+        <div class="setup-card">
+
+            <h2>
+                Welcome To SpendWise
+            </h2>
+
+            <p>
+                Let's setup your account
+            </p>
+
+            <input
+                type="number"
+                id="salaryInput"
+                placeholder="Monthly Salary"
+            >
+
+            <input
+                type="month"
+                id="monthInput"
+            >
+
+            <button
+                id="saveSetupBtn"
+                class="primary-btn"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="dashboardPage"
+        class="page"
+    >
+
+
+        <header class="dashboard-header">
+
+    <div class="top-actions">
+
+        <button
+        id="analyticsBtn"
+        class="primary-btn">
+            Analytics
+        </button>
+
+        <button
+        id="exitBtn"
+        class="danger-btn">
+            Exit App
+        </button>
+
+    </div>
+
+    <h1 class="dashboard-logo">
+        SpendWise
+    </h1>
+
+    <p id="currentMonth">
+        July 2026
+    </p>
+
+</header>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-card">
+
+                <h4>
+                    Salary
+                </h4>
+
+                <h2 id="salaryDisplay">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h4>
+                    Spent
+                </h4>
+
+                <h2 id="spentDisplay">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h4>
+                    Remaining
+                </h4>
+
+                <h2 id="remainingDisplay">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h4>
+                    Savings
+                </h4>
+
+                <h2 id="savingsDisplay">
+                    ₹0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <h2>
+                Monthly Analytics
+            </h2>
+
+            <div class="analytics-grid">
+
+                <div>
+
+                    <h4>
+                        This Month
+                    </h4>
+
+                    <p id="thisMonthSpend">
+                        ₹0
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Last Month
+                    </h4>
+
+                    <p id="lastMonthSpend">
+                        ₹0
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4>
+                        Difference
+                    </h4>
+
+                    <p id="differencePercent">
+                        0%
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="expense-form">
+
+            <input
+                type="text"
+                id="expenseName"
+                placeholder="Expense Name"
+            >
+
+            <input
+                type="number"
+                id="expenseAmount"
+                placeholder="Amount"
+            >
+
+            <button
+                id="addExpenseBtn"
+                class="primary-btn"
+            >
+                Add Expense
+            </button>
+
+        </div>
+
+
+        <div class="expenses-section">
+
+            <h2>
+                Recent Expenses
+            </h2>
+
+            <div id="expenseList">
+
+
+            </div>
+
+        </div>
+
+
+        <div class="end-month-section">
+
+            <button
+                id="endMonthBtn"
+                class="danger-btn"
+            >
+                End Month
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <div
+        id="monthModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <h2>
+                Month Completed
+            </h2>
+
+            <p>
+
+                What would you like to do
+                with the remaining amount?
+
+            </p>
+
+            <div class="radio-group">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="monthAction"
+                        value="forward"
+                        checked
+                    >
+
+                    Carry Forward
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="monthAction"
+                        value="save"
+                    >
+
+                    Move To Savings
+
+                </label>
+
+            </div>
+
+            <button
+                id="confirmMonthBtn"
+                class="primary-btn"
+            >
+                Confirm
+            </button>
+
+        </div>
+
+    </div>
+    <div id="analyticsModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>
+            Expense Analytics
+        </h2>
+
+        <canvas
+        id="expenseChart"
+        width="300"
+        height="300">
+        </canvas>
+
+        <br>
+
+        <button
+        id="closeAnalytics"
+        class="primary-btn">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
